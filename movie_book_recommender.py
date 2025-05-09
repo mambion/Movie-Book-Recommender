@@ -44,3 +44,6 @@ if __name__ == "__main__":
 
     print("\nRecommended Books:")
     print(recommended_books)
+
+# This code defines a simple movie and book recommendation system based on user preferences.
+# It uses pandas to handle data and provides a basic structure for recommending movies and books.
