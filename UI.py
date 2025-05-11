@@ -75,3 +75,18 @@ def display_recommendations(movies, books):
             genre = row[1]
             author = row[2]
             print(" - " + title + " by " + author + " (" + genre + ")")
+            
+def run_recommender(recommender):
+"""adds a way for the user to try again if they aren't recommended anything (will add a way to redo it anyway)"""
+    while True:
+        preferences = user_preferences()
+        recommended_movies = recommender.recommend_movies(preferences)
+        recommended_books = recommender.recommend_books(preferences)
+        display_recommendations(recommended_movies, recommended_books)
+        if recommended_movies.empty and or recommended_books.empty:
+            try_again = input("\nNo matches found. Would you like to try again? (yes/no): ").strip().lower()
+            if try_again != "yes":
+                print("Thanks for using the recommender! Goodbye :)")
+                break
+        else:
+            break
