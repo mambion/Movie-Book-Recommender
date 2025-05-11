@@ -25,41 +25,53 @@ def user_preferences():
         
     """cleaning up the given data"""    
     #makes sure theres no extra spaces in the lists
+    cleaned_movie_genres = []
     for genre in movie_genres:
-        if genre.strip():
-            movie_genres = genre.strip() 
+        stripped_genre = genre.strip()
+        if stripped_genre != "":
+            cleaned_movie_genres.append(stripped_genre)
+    movie_genres = cleaned_movie_genres
+    cleaned_book_genres = []
     for genre in book_genres:
-        if genre.strip():
-            book_genres = genre.strip() 
+        stripped_genre = genre.strip()
+        if stripped_genre != "":
+            cleaned_book_genres.append(stripped_genre)
+    book_genres = cleaned_book_genres
+    cleaned_actors = []
     for actor in actors:
-        if actor.strip():
-            actors = actor.strip()
+        stripped_actor = actor.strip()
+        if stripped_actor != "":
+            cleaned_actors.append(stripped_actor)
+    actors = cleaned_actors
+    cleaned_authors = []
     for author in authors:
-        if author.strip():
-            authors = author.strip() 
+        stripped_author = author.strip()
+        if stripped_author != "":
+            cleaned_authors.append(stripped_author)
+    authors = cleaned_authors
     #puts the answers in dictionary
     preferences = {'movie_genres': movie_genres, 'book_genres': book_genres, 'actors': actors, 'authors': authors} 
     return preferences
     
 def display_recommendations(movies, books):
-"""displays the movie and book recommendations with their titles genres and actors/ authors"""
-#printing the movie recommendations
-print("\nRecommended Movies:")
-if movies.empty:
-    print("Sorry, we couldn't find any matching movies :(")
-else:
-    for row in movies[["title", "genre", "actor"]].values:
-        title = row[0]
-        genre = row[1]
-        actor = row[2]
-        print(" - " + title + " (" + genre + "), featuring: " + actor)
-#printing the book recommendations
-print("\nRecommended Books:")
-if books.empty:
-    print("Sorry, we couldn't find any matching books :(")
-else:
-    for row in books[["title", "genre"]].values:
-        title = row[0]
-        genre = row[1]
-        author = row[2]
-        print(" - " + title + " by " + author + " (" + genre + ")")
+    """displays the movie and book recommendations with their titles genres and actors/ authors"""
+    #printing the movie recommendations
+    print("\nRecommended Movies:")
+    if movies.empty:
+        print("Sorry, we couldn't find any matching movies :(")
+    else:
+        for row in movies[["title", "genre", "actor"]].values:
+            title = row[0]
+            genre = row[1]
+            actor = row[2]
+            print(" - " + title + " (" + genre + "), featuring: " + actor)
+    #printing the book recommendations
+    print("\nRecommended Books:")
+    if books.empty:
+        print("Sorry, we couldn't find any matching books :(")
+    else:
+        for row in books[["title", "genre", "author"]].values:
+            title = row[0]
+            genre = row[1]
+            author = row[2]
+            print(" - " + title + " by " + author + " (" + genre + ")")
