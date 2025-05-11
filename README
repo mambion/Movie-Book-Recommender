@@ -1,0 +1,12 @@
+(these are the documentation questions from the project file on elms, will clean up once project is done)
+One to four sentences explaining what your project is and what it does.
+  This project is a book/ movie recommender. It uses a recommendation algorithm based on the users likes (genres/ authors/ actors) and gives
+  the user a recommendation in the command line. 
+An explanation on how to run the program from the command line.
+  The code introduces the user to what is about to happen, prompts the user to answer a few questions, and responds with book recommendations
+  within the command line.
+Documentation on how to use the program / how to interpret the output of the program.
+  Running the code will prompt a command line conversation. All information will be there. Interpreting the program will be reading the 
+  command line outputs.
+An annotated bibliography of all sources you used to develop the program and how you used them.
+  TBD
