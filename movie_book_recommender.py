@@ -50,8 +50,7 @@ if __name__ == "__main__":
     def user_preferences():
         """this function introduces what is going to happen next, collects what books and movie genres the user has, and 
         returns it as a dictionary"""
-        print("Welcome! This recommendation algorithm finds books and movies for you based on what you like!\nAnswer 
-        the next few questions so we can learn what you like :)\n) 
+        print("Welcome! This recommendation algorithm finds books and movies for you based on what you like!\nAnswer the next few questions so we can learn what you like :)\n) 
         
         """asking all the user questions"""
         #asking for movie genres 
