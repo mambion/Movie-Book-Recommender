@@ -47,3 +47,73 @@ if __name__ == "__main__":
 
 # This code defines a simple movie and book recommendation system based on user preferences.
 # It uses pandas to handle data and provides a basic structure for recommending movies and books.
+    def user_preferences():
+        """this function introduces what is going to happen next, collects what books and movie genres the user has, and 
+        returns it as a dictionary"""
+        print("Welcome! This recommendation algorithm finds books and movies for you based on what you like!\nAnswer 
+        the next few questions so we can learn what you like :)\n) 
+        
+        """asking all the user questions"""
+        #asking for movie genres 
+        movie_genres_input = input("What are your favorite movie genres? (Separate them with commas please): ")
+        movie_genres = movie_genres_input.lower().split(",")
+        #asking for book genres
+        book_genres_input = input("What are your favorite book genres? (Separate them with commas please): ")
+        book_genres = book_genres_input.lower().split(",")
+        #asking for actors (but it's optional just in case they can't think of anyone)
+        actors_input = input("Do you have any favorite movie actors? Be sure to spell their name right! (Optional – press Enter to skip, Separate them with commas please): ")
+        if actors_input:
+            actors = actors_input.lower().split(",")
+        else:
+            authors = []
+        #asking for favorite authors (also optional)
+        authors_input = input("Do you have any favorite book authors? Be sure to spell their name right! (Optional – press Enter to skip, Separate them with commas please): ")
+        if authors_input:
+            authors = authors_input.lower().split(",") 
+        else:
+            authors = []
+            
+        """cleaning up the given data"""    
+        #makes sure theres no extra spaces in the lists
+        for genre in movie_genres:
+            if genre.strip():
+                movie_genres = genre.strip() 
+        for genre in book_genres:
+            if genre.strip():
+                book_genres = genre.strip() 
+        for actor in actors:
+            if actor.strip():
+                actors = actor.strip()
+        for author in authors:
+            if author.strip():
+                authors = author.strip() 
+        #puts the answers in dictionary
+        preferences = {'movie_genres': movie_genres, 'book_genres': book_genres, 'actors': actors, 'authors': authors} 
+        return preferences
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
