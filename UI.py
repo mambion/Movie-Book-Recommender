@@ -1,7 +1,10 @@
+import pandas as pd
+from movie_book_recommender import MovieBookRecommender
+
 def user_preferences():
     """this function introduces what is going to happen next, collects what books and movie genres the user has, and 
     returns it as a dictionary"""
-    print("Welcome! This recommendation algorithm finds books and movies for you based on what you like!\nAnswer the next few questions so we can learn what you like :)\n) 
+    print("Welcome! This recommendation algorithm finds books and movies for you based on what you like!\nAnswer the next few questions so we can learn what you like :)\n") 
     
     """asking all the user questions"""
     #asking for movie genres 
@@ -77,13 +80,13 @@ def display_recommendations(movies, books):
             print(" - " + title + " by " + author + " (" + genre + ")")
             
 def run_recommender(recommender):
-"""adds a way for the user to try again if they aren't recommended anything (will add a way to redo it anyway)"""
+    """adds a way for the user to try again if they aren't recommended anything (will add a way to redo it anyway)"""
     while True:
         preferences = user_preferences()
         recommended_movies = recommender.recommend_movies(preferences)
         recommended_books = recommender.recommend_books(preferences)
         display_recommendations(recommended_movies, recommended_books)
-        if recommended_movies.empty and or recommended_books.empty:
+        if recommended_movies.empty and recommended_books.empty:
             try_again = input("\nNo matches found. Would you like to try again? (yes/no): ").strip().lower()
             if try_again != "yes":
                 print("Thanks for using the recommender! Goodbye :)")
