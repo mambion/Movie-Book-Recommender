@@ -138,12 +138,17 @@ def prompt_user_preferences_for_books() -> dict:
     }
 
 
+
 def prompt_user_preferences_for_movies(available_genres: Set[str]) -> dict:
     """
     Prompt the user for their movie preferences, showing available genres and allowing 'none' for runtime.
     """
     # Awad Gebrewahid worked on this function as it's movie-specific user preference input.
-    genres = input("Enter one or more movie genres, separated by commas (e.g., Action, Comedy). Type 'none' to skip: ").strip()
+    print("")
+    print("Available movie genres:")
+    print(", ".join(sorted(available_genres)))
+    print()
+    genres = input("Enter your favorite movie genres (comma-separated, or 'none'): ").strip()
     if genres.lower() == 'none':
         selected_genres = []
     else:
@@ -276,16 +281,17 @@ def display_book_recommendations(recommendations: List[Book]):
         authors = "/".join(book.authors) if book.authors else "Unknown"
 
         print(f"{idx}. {book.title} ({pages})")
-        print(f"Rating: {rating}")
-        print(f"Published: {pub_date}")
-        print(f"Author: {authors}\n")
+        print(f"  Authors: {authors}")
+        print(f"  Rating: {rating}")
+        print(f"  Published: {pub_date}")
+        print("")
 
 
 def display_movie_recommendations(recommendations: List[Movie]):
     """
-    Display the movie recommendations to the user, including the overview in the desired format.
+    Display the movie recommendations to the user.
     """
-    # Awad Gebrewahid worked on this function as it displays movie recommendations.
+    # Awad Gebrewahid worked on this function, as it displays movie recommendations.
     print(f"\nTop {len(recommendations)} Movie Recommendations:\n")
     for idx, movie in enumerate(recommendations, 1):
         title = movie.title
