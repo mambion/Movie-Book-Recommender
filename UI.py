@@ -83,7 +83,7 @@ def run_recommender(recommender):
         recommended_movies = recommender.recommend_movies(preferences)
         recommended_books = recommender.recommend_books(preferences)
         display_recommendations(recommended_movies, recommended_books)
-        if recommended_movies.empty and or recommended_books.empty:
+        if recommended_movies.empty and recommended_books.empty:
             try_again = input("\nNo matches found. Would you like to try again? (yes/no): ").strip().lower()
             if try_again != "yes":
                 print("Thanks for using the recommender! Goodbye :)")
