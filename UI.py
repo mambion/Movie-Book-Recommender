@@ -1,7 +1,7 @@
 def user_preferences():
     """this function introduces what is going to happen next, collects what books and movie genres the user has, and 
     returns it as a dictionary"""
-    print("Welcome! This recommendation algorithm finds books and movies for you based on what you like!\nAnswer the next few questions so we can learn what you like :)\n) 
+    print("Welcome! This recommendation algorithm finds books and movies for you based on what you like!\nAnswer the next few questions so we can learn what you like :)\n") 
     
     """asking all the user questions"""
     #asking for movie genres 
@@ -77,7 +77,7 @@ def display_recommendations(movies, books):
             print(" - " + title + " by " + author + " (" + genre + ")")
             
 def run_recommender(recommender):
-"""adds a way for the user to try again if they aren't recommended anything (will add a way to redo it anyway)"""
+    """adds a way for the user to try again if they aren't recommended anything (will add a way to redo it anyway)"""
     while True:
         preferences = user_preferences()
         recommended_movies = recommender.recommend_movies(preferences)
